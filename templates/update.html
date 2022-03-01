@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+<div class=" container ms-auto me-auto row">
+    {% for item in items %}
+    
+    <div class="card col-3 ms-2 me-2 " style="width: 18rem;">
+        
+        <img src="{{ url_for('static',filename='images/' + item.img_file) }}" height="200" width="100" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class=""> <br> اسم الجهاز <br> {{ item.devicename }}</h5>
+          <p class=""> <br> نبذة مختصرة  <br> {{ item.shortdesc }} </p>
+          <p class=""><br> نبذة مطولة<br>{{ item.longdesc }}</p>
+          <p class=""> <br> الكمية  <br>{{ item.qty }}</p>
+          <p class=""> <br> السعر  <br>{{ item.price }}</p>
+          <p class=""> <br> نوع الجهاز  <br> {{ item.kind }}</p>
+          <a href="{{ url_for('updateitem',id=item.id) }}" class="btn btn-primary">تعديل</a>
+        </div>
+      </div>
+      
+      {% endfor %}
+{% endblock %}  

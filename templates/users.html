@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+<title> admin page</title>
+{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+                 
+                
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+<div class="container d-flex justify-content-center ">
+
+<table class="table table-hover mt-5  d-flex justify-content-center" >
+    <tr>
+<th> رقم الحساب</th>
+<th> اسم المستخدم</th>
+</tr>
+{% for us in user %} 
+<tr>
+<td>{{ us.id }}  </td>
+<td> {{ us.username }}  </td>
+
+<td > <a href="{{url_for('userdelete',id=us.id)}}" class="btn btn-danger text-black"> حذف</a>  </td>
+<!-- <td > <a href="#" class="btn btn-warning text-black"> تعديل</a> </td>  -->
+{% if us.rule==False %}
+<td ><a href="{{url_for('makeadmin',id=us.id)}}" class="btn btn-success text-black"> اضافة ادمن</a>  </td>
+{% else %}
+<td ><a href="{{url_for('makeadmin',id=us.id)}}" class="btn btn-success text-black"> حذف ادمن</a>  </td>
+{% endif %}
+</tr>   
+
+
+{% endfor %}
+</table>
+</div>
+{% endblock %}  

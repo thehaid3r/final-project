@@ -1,0 +1,341 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    
+    
+{% endfor %}
+{% endif %}
+{% endwith %}
+<title>home </title>
+<div class="container text-white ">
+    <div class="d-sm-flex align-items-center justify-content-between">
+        <div class="col-8">
+            <h1>مرحبا بكم في سايبورغ </h1>
+            <h2 class="mt-lg-1">هو مشروع من ضمن مشاريع المحطة<br>الذي يوفر لك منصة لكل ما يتعلق بالاجهزة
+                الطبية<br>لتسهيل اختيار الشخص للأجهزة المناسبة</h2>
+            <button class="btn  btn-lg me-auto ms-auto bttn">تواصل معنا</button>
+        </div>
+        <div class="col-4">
+            <img src="../static/images/CT scan-amico.png" width="654" height="619" alt="" class="img-fluid d-sm-block d-d0ne">
+        </div>
+    </div>
+    <div class="d-sm-flex align-items-center ">
+        <div class="plus ">
+            <h1>23K</h1>
+            <h4> Devices Sold</h4>
+            <div class="pluus">
+                <img src="../static/images/pluus.png" alt="">
+                <!-- <script class="pluus" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_wkt6exed.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player> -->
+            </div>
+        </div>
+        <div class="plus">
+            <h1>23K</h1>
+            <h4> Devices Sold</h4>
+            <div class="pluus">
+                <img src="../static/images/pluus.png" alt="">
+
+                <!-- <script class="pluus" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+                <!-- <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_wkt6exed.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player> -->
+            </div>
+        </div>
+        <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_E3llVz.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player> -->
+    </div>
+
+</div>
+<!-- <div>
+    <img src="./images/Vector 4.png" alt="" width="2693.5" height="208" class="">
+</div> -->
+<!-- =========news letter=========== -->
+</section>
+<section>
+    <div class="container ">
+        <div>
+            <div class="let">
+                <p class="span">لماذا تعتبر الأجهزة الطبية مهمة في حياتنا؟</p>
+                <h1>الطب دائما <br>في تطور </h1>
+                <h5>يوفر مجموعة خدمات كاملة</h5>
+                <h6>تفيد الأجهزة الطبية المرضى من خلال مساعدة مقدمي الرعاية الصحية <br>تشخيص وعلاج المرضى ومساعدة المرضى
+                    على التغلب على المرض أو<br>المرض وتحسين نوعية حياتهم.</h6>
+            </div>
+
+        </div>
+        <div>
+            <img src="./images/pic.png" alt="" width="553.32" height="585" class="pic">
+
+        </div>
+        <div class="lign-items-center justify-content-between box-dark d-flex texter   bbbbbb">
+            <div>
+                <h1>42%</h1>
+                <h6>سنوات من الخبرة</h6>
+            </div>
+            <div>
+                <h1>20+</h1>
+                <p>اعضاء الشركة</p>
+            </div>
+            <div>
+                <h1>1.000</h1>
+                <p>اجهزتنا</p>
+            </div>
+
+        </div>
+        <img src="../cyborg/bbbbbbbbb.png" alt="" width="1171" height="176" class="bbbbbbb">
+    </div>
+
+</section>
+<section>
+    <div class="container d-sm-flex align-items-center justify-content-between">
+        <Div>
+            <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
+            <h1>ستكون عظيمة<br>تجربتك معنا</h1>
+            <p>ضمان حقيقي للأجهزة الأكثر إثارة للإعجاب.<br>عمل حاضر وجاهز ودقيق</p>
+
+        </Div>
+        <div class="m-right">
+            <h1>1-منتجاتنا حصرية </h1>
+            <h1>2- تعمل بدقة غير متناهية</h1>
+            <h1>3- اسعارنا تنافسية</h1>
+
+        </div>
+
+
+    </div>
+</section>
+<section class="mt-lg-5">
+    <div class="container d-sm-flex align-items-center justify-content-between">
+        <Div>
+            <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
+            <h1>ستكون عظيمة<br>أطلق العنان لأكبر قيمة ممكنة</h1>
+            <p>نقدم الدعم والخدمة لأجهزة القياس الخاصة بك تركيب مرورًا بالصيانة الوقائية والمعايرة حتى إصلاح
+                الأجهزة.<br>خدمات شاملة للميزان والمقياس وخدمات أجهزة القياس الأخرى
+            </p>
+
+        </Div>
+        <div>
+            <img src="../cyborg/lab.png" alt="" width="659" height="641">
+        </div>
+
+
+    </div>
+</section>
+<section>
+    <div class="container d-sm-flex align-items-center justify-content-between">
+        <div>
+            <img src="../cyborg/Laboratory-cuate.png" alt="" width="627" height="572">
+        </div>
+        <Div>
+            <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
+            <h1>ستكون عظيمة<br>أطلق العنان لأكبر قيمة ممكنة</h1>
+            <p>نقدم الدعم والخدمة لأجهزة القياس الخاصة بك تركيب مرورًا بالصيانة الوقائية والمعايرة حتى إصلاح
+                الأجهزة.<br>خدمات شاملة للميزان والمقياس وخدمات أجهزة القياس الأخرى
+            </p>
+            <div class="d-sm-flex align-items-center">
+                <div class="image">
+                    <img src="../cyborg/true.png">
+                </div>
+                <div class="text ">
+                    <h5>مجموعة بما في ذلك المهارات الفنية</h5>
+                </div>
+            </div>
+            <div class="d-sm-flex align-items-center mt-lg-3">
+                <div class="image">
+                    <img src="../cyborg/true.png">
+                </div>
+                <div class="text ">
+                    <h5>مجموعة بما في ذلك المهارات الفنية</h5>
+                </div>
+            </div>
+            <div class="d-sm-flex align-items-center mt-lg-3">
+                <div class="image">
+                    <img src="../cyborg/true.png">
+                </div>
+                <div class="text ">
+                    <h5>مجموعة بما في ذلك المهارات الفنية</h5>
+                </div>
+            </div>
+        </div>
+
+
+    </Div>
+    </div>
+</section>
+<!-- =========news section=========== -->
+<section class="container   ">
+    <h1 class="w3-center">الأخبار</h1>
+    <button class="w3-button w3-black  " onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black  " onclick="plusDivs(1)">&#10095;</button>
+
+    <div class="w3-content w3-display-container">
+
+        <div class="mySlides  ">
+
+            <div class=" d-sm-flex  justify-content-between">
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+
+                    </div>
+                </div>
+
+                <div class="card  m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mySlides  ">
+
+            <div class=" d-sm-flex  justify-content-between">
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+
+                    </div>
+                </div>
+                <div class="card  m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mySlides  ">
+
+            <div class=" d-sm-flex  justify-content-between">
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+
+                    </div>
+                </div>
+                <div class="card  m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="../cyborg/neeeews.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example tfffffffffffffffffffffffext to build on the card title
+                            and make up the bulk of the card's content.</p>
+                        <p class="fs-6">.fs-6 text</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+    </section>
+
+{% endblock %}

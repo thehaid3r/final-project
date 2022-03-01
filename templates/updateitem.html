@@ -1,0 +1,77 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">تعديل المنتج</h1>
+
+    <div class="d-lg-flex mt-5 me-auto ms-auto">
+
+
+
+
+        <form action="" method="post" class="mb-5" enctype="multipart/form-data">
+
+            {{form.hidden_tag()}}
+            <br>
+            <img src="{{ url_for('static',filename='images/' + form.img_file.data) }}" height="200" width="100"
+                class="card-img-top" alt="...">
+            <br>
+            <br>
+
+            <span class="form-label class=width "> اسم الجهاز</span>
+
+            <br>
+            {{form.devicename(class="width")}}
+            {% for error in form.devicename.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+            <br>
+            <br>
+            <span class="form-label class=width "> نبذة مختصرة</span>
+
+            <br>
+            {{form.shortdesc(cols="80", rows="2")}}
+            {% for error in form.shortdesc.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+            <br>
+            <br>
+            <span class="form-label class=width "> نبذة مطولة</span>
+            <br>
+            {{form.longdesc(cols="80", rows="4")}}
+            {% for error in form.longdesc.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+            <br>
+            <br>
+            {{ form.img_file.label}}
+            <br>
+            {{ form.img_file(class="form-control-file")}}
+            {% for error in form.img_file.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+            <br>
+            <br>
+            {{form.qty()}}
+            {% for error in form.qty.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+            <br>
+            <br>
+            {% for subfield in form.kind %}
+            <tr>
+                <td>{{ subfield }}</td>
+                <td>{{ subfield.label }}</td>
+            </tr>
+            {% endfor %}
+            <br>
+            <br>
+            {{form.submit(class="btn btn_color mb-3 ")}}
+            <br> <br>
+
+
+        </form>
+    </div>
+    {% endblock %}

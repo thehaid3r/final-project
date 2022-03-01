@@ -1,0 +1,78 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+<div class="container">
+<h1 class="text-center display-1 hero-text1  "> الصيانة</h1>
+        <p class="text-center">نقدم الدعم والخدمة لأجهزة القياس الخاصة بك على مدى دورة حياتها بالكامل، بدءًا من التركيب الأجهزة.<br>خدمات شاملة للميزان والمقياس وخدمات أجهزة القياس الأخرى
+            <br>خدمات شاملة للميزان والمقياس وخدمات أجهزة القياس الأخرى<br>خدمات شاملة للميزان والمقياس
+        </p>
+        <Section class="d-sm-flex align-items-center justify-content-between">
+            <div class="">
+
+                <img src="../static/images/ment.png" alt="" width="696" height="709">
+            </div>
+            <div>
+                <form class=" " method="post">
+                    <div class="d-sm-flex align-items-center ">
+                        {{ form.hidden_tag() }}
+                        
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">الاسم الاول</label>
+                            {{ form.firstname(class="form-control",   id="exampleInputEmail1", aria_describedby="emailHelp")}}
+                            
+                            <div id="emailHelp" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label ">الاسم الثاني</label>
+                            {{ form.secondname( class="form-control", id="exampleInputEmail1", aria_describedby="emailHelp") }}
+                            
+                            <div id="emailHelp" class="form-text"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">عنوان الشارع / الحي</label>
+                        {{ form.address(class="form-control") }}
+                        
+                        <div id="text" class="fmor-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">اقرب نقطة دالة</label>
+                        {{ form.closepoint(class="form-control") }} 
+                        <div id="text" class="fmor-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">المحافظة/المدينة</label>
+                        {{ form.city(class="form-control") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">رقم الهاتف</label>
+                        {{ form.phonenumber(class="form-control" , type="tel",placeholder="+964") }}
+                        <div id="text" class="fmor-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">الايميل</label>
+                        {{ form.email(class="form-control" ,type="email") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">اسم الجهاز</label>
+                        {{ form.devicename(class="form-control") }}
+                        <div id="text" class="fmor-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">الحالة</label>
+                        {{ form.description(class="form-control") }}
+                    </div>
+                    {{ form.submit(class="btn btn-lg me-auto ms-auto bttn " , id="bttn") }}
+
+                </form>
+            </div>
+        </Section>
+
+
+    </div>
+
+<title>الصيانة </title>
+
+{% endblock %}  

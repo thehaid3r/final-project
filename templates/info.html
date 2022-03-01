@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-6 col-12">
+
+        <img src="{{ url_for('static',filename='images/' + items.img_file) }}" height="600" width="500" class=""
+            alt="...">
+    </div>
+    <div class="col-lg-6 col-12">
+        {{ items.devicename }}
+        <br>
+
+        {{ items.shortdesc }}
+        <br>
+        {{ items.longdesc }}
+        <br>
+        <a href="{{url_for('addtocard',id=items.id,qty=items.qty)}}" class="btn btn_color mb-3 "> شراء</a>
+    </div>
+</div>
+
+{% endblock %}

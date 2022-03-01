@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+<title> admin page</title>
+{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+                 
+                
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+<div class="container">
+
+
+<table class="table table-hover mt-5 d-flex justify-content-center">
+    <tr>
+        <th> الاسم</th>
+        <th> العنوان </th>
+        <th> المحافظة </th>
+        <th> اقرب نقطة</th>
+        
+        <th> رقم الهاتف</th>
+        <th> الايميل</th>
+        <th> اسم الجهاز</th>
+        <th>  الحالة</th>
+        
+       
+        
+    </tr>
+{% for order in orders %}
+
+
+<tr>
+    <td>{{order.firstname}}  {{order.secondname}}</td>
+    <td>{{order.address}}</td>
+    <td>{{order.city}}</td>
+    <td>{{order.closepoint}}</td>
+    <td>{{order.phonenumber}}</td>
+    <td>{{order.email}}</td>
+    <td>{{order.devicename}}</td>
+    <td>{{order.description}}</td>
+    <!-- <td > <a href="#" class="btn btn-info  " > الرد </a>  </td> -->
+    <td ><a href="{{url_for('delete',id=order.id)}}" class="btn btn-danger  " > حذف</a>  </td>
+
+    
+</tr>
+         
+
+
+{% endfor %}
+</table>
+</div>
+{% endblock %}  
