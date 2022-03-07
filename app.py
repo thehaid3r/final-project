@@ -172,6 +172,7 @@ def login():
         if user:
             if bcrypt.check_password_hash(user.password,form.password.data):
                 login_user(user)
+                session["card"]=[]
                 return redirect(url_for('home'))
             else :
                 flash("اسم المستخدم او الرمز السري خاطئ !")
@@ -196,6 +197,15 @@ def register():
 @login_required
 
 def sale():
+    
+    results = db.engine.execute("SELECT * FROM store where id in (?)", ",".join(str([obj['id']]) for obj in session['card'])).fetchall()
+    print(0)
+    print(results)
+    for result in results :
+        
+        new_sale=sales(devicename=result.devicename,shortdesc=result.shortdesc,qty=result.qty,price=result.price,t_price=qty*price )
+        db.session.add(new_sale)
+        db.session.commit()
     items=sales.query.order_by(sales.id)
     return render_template('sales.html',items=items)
 
@@ -207,7 +217,7 @@ def payment():
         new_case=custmer(firstname=form.firstname.data,secondname=form.secondname.data,address=form.address.data,closepoint=form.closepoint.data,city=form.city.data,phonenumber=form.phonenumber.data,email=form.email.data,description=form.description.data)
         db.session.add(new_case)
         db.session.commit()
-        session.pop("id",None)
+        session.pop('id',None)
         return redirect(url_for('sale')) 
     return render_template('payment.html',form=form)
 
@@ -448,8 +458,29 @@ def update():
 
 @app.route('/addtocard/<int:id>/<int:qty>' )
 def addtocard(id,qty):
-    session["id"]=id
-    session["qty"]=qty
+    items=session["card"]
+    li=[]
+    
+    for item in items:
+
+        if item.get("id",None)!=id :
+            li.append(item)
+            print(item)
+           
+        else :
+            item["qty"] =item["qty"]+ qty
+            li.append(item) 
+    
+    if len(items)==0 :
+        li.append({"id":id ,"qty":qty})
+    elif id not in [obj['id'] for obj in li ] :
+        
+        li.append({"id":id ,"qty":qty})
+
+
+    session["card"]=li
+   
+    print(session["card"])
     return redirect(url_for('pro2'))
 
 

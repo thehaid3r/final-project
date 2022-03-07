@@ -4,7 +4,9 @@
 
 {% block content %}
 <div class="container">
-{% if items[0] %}
+   {{session["card"]}}
+
+  
     {% for item in items %}
            
         {% if session["id"] %}
@@ -33,9 +35,9 @@
         {% endif %}
 
     {% endfor %}
-{% else %}
-<h1> empty sales</h1>
-{% endif %}
+
+
+
 
 </div>
 {% endblock %}  
