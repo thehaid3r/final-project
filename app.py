@@ -197,28 +197,39 @@ def register():
 @login_required
 
 def sale():
+   
     
-    results = db.engine.execute("SELECT * FROM store where id in (?)", ",".join(str([obj['id']]) for obj in session['card'])).fetchall()
-    print(0)
-    print(results)
-    for result in results :
+    
         
-        new_sale=sales(devicename=result.devicename,shortdesc=result.shortdesc,qty=result.qty,price=result.price,t_price=qty*price )
-        db.session.add(new_sale)
-        db.session.commit()
+        
     items=sales.query.order_by(sales.id)
     return render_template('sales.html',items=items)
 
 
 @app.route('/payment',methods=(['GET','POST']))
+@login_required
+
 def payment():
-    form=custmerform()
-    if form.validate_on_submit():
-        new_case=custmer(firstname=form.firstname.data,secondname=form.secondname.data,address=form.address.data,closepoint=form.closepoint.data,city=form.city.data,phonenumber=form.phonenumber.data,email=form.email.data,description=form.description.data)
-        db.session.add(new_case)
-        db.session.commit()
-        session.pop('id',None)
-        return redirect(url_for('sale')) 
+    if session["card"] != [] :
+        form=custmerform()
+        if form.validate_on_submit():
+            
+            results=session["card"]
+                
+            for result in results :
+                item = store.query.filter_by(id=result["id"]).first()
+                s_price=item.price
+                new_sale=sales(devicename=item.devicename,shortdesc=item.shortdesc,img_file=item.img_file,qty=result["qty"],price=s_price,t_price=result["qty"]*s_price ,user_id=current_user.id)
+                db.session.add(new_sale)
+                db.session.commit()
+            new_case=custmer(firstname=form.firstname.data,secondname=form.secondname.data,address=form.address.data,closepoint=form.closepoint.data,city=form.city.data,phonenumber=form.phonenumber.data,email=form.email.data,description=form.description.data)
+            db.session.add(new_case)
+            db.session.commit()
+            session["card"]=[]
+            return redirect(url_for('sale')) 
+    else :
+        flash("لم يتم اختيار اي منتج ") 
+        return redirect(url_for('home'))   
     return render_template('payment.html',form=form)
 
 
@@ -227,6 +238,7 @@ def payment():
 @login_required
 def logout():
     logout_user()
+    session.pop('card',None)
     flash("تم تسجيل الخروج !")
     return redirect (url_for('home'))
 
