@@ -4,6 +4,7 @@
 
 {% block content %}
 <div class="container">
+    
     <div class="shopping-cart mt-5">
 
         <table class="table table-borderless">
@@ -23,11 +24,11 @@
     
     {% for item in items %}
    
-
+    {% if item.user_id == current_user.id %}
         
 
     
-       {% if item.user_id == current_user.id %}
+       
         <div class="product">
             <div class="product-image">
                 <img src="../static/images/cq5dam.web.1280.1280.jpg">
@@ -52,12 +53,12 @@
         
    
     
-    
         {% endif %}
+        
 
             
     {% endfor %}
-
+    
     {% if session["card"] != [] %}
     <div class="totals">
         <div class="totals-item">
@@ -79,5 +80,6 @@
     
 
 </div>
+{{session["card"]}}
 <script src="test2.js"></script>
 {% endblock %}  

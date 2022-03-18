@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <h3>55$</h3>
+                                    <h3>{{items.price}}$</h3>
                                 </div>
                             </div>
                         </div>
@@ -55,22 +55,6 @@
 
 </div>
 
-<div class="row">
-    <div class="col-lg-6 col-12">
 
-        
-            alt="...">
-    </div>
-    <div class="col-lg-6 col-12">
-        {{ items.devicename }}
-        <br>
-
-        {{ items.shortdesc }}
-        <br>
-        {{ items.longdesc }}
-        <br>
-        <a href="{{url_for('addtocard',id=items.id,qty=items.qty)}}" class="btn btn_color mb-3 "> شراء</a>
-    </div>
-</div>
 
 {% endblock %}

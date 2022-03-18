@@ -31,9 +31,9 @@
 <td > <a href="{{url_for('userdelete',id=us.id)}}" class="btn btn-danger text-black"> حذف</a>  </td>
 <!-- <td > <a href="#" class="btn btn-warning text-black"> تعديل</a> </td>  -->
 {% if us.rule==False %}
-<td ><a href="{{url_for('makeadmin',id=us.id)}}" class="btn btn-success text-black"> اضافة ادمن</a>  </td>
+<td ><a href="{{url_for('makeadmin',id=us.id)}}" class="btn btn-info text-black"> اضافة ادمن</a>  </td>
 {% else %}
-<td ><a href="{{url_for('makeadmin',id=us.id)}}" class="btn btn-success text-black"> حذف ادمن</a>  </td>
+<td ><a href="{{url_for('makeadmin',id=us.id)}}" class="btn btn-info text-black"> حذف ادمن</a>  </td>
 {% endif %}
 </tr>   
 
