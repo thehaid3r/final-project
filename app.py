@@ -197,12 +197,8 @@ def register():
 @login_required
 
 def sale():
-   
-    
-    
-        
     results=session["card"]    
-    items=sales.query.order_by(sales.id)
+    items=store.query.order_by(store.id)
     return render_template('sales.html',items=items,results=results)
 
 
@@ -497,6 +493,36 @@ def addtocard(id,qty):
     print(session["card"])
     return redirect(url_for('proudcts'))
 
+
+
+@app.route('/updatecard/<int:id>' , methods=["POST"] )
+def updatecard(id):
+    qty=int(request.form.get("quantity"))
+    print(qty)
+    items=session["card"]
+    li=[]
+    
+    for item in items:
+
+        if item.get("id",None)!=id :
+            li.append(item)
+            print(item)
+           
+        else :
+            item["qty"] =int(item.get("qty",0))+ qty
+            li.append(item) 
+    
+    if len(items)==0 :
+        li.append({"id":id ,"qty":qty})
+    elif id not in [obj['id'] for obj in li ] :
+        
+        li.append({"id":id ,"qty":qty})
+
+
+    session["card"]=li
+   
+    print(session["card"])
+    return redirect(url_for('proudcts'))
 
 if __name__=="__main__":
 

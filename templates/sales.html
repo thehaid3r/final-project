@@ -27,9 +27,11 @@
         
 
     {% for result in results %}
+
     {% for item in items %}
 
-       {% if item.id == result.id %}
+       {% if item.id == result["id"] %}
+      
         <div class="product">
             <div class="product-image">
                 <img src="{{ url_for('static',filename='images/' + item.img_file) }} " height="100" width="100">
@@ -51,12 +53,6 @@
 
        {% endif %}
     {% endfor %}
-
-   
-    
-        
-
-            
     {% endfor %}
     
     {% if session["card"] != [] %}
@@ -81,5 +77,5 @@
 
 </div>
 
-
+{{session["card"]}}
 {% endblock %}  
