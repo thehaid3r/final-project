@@ -3,6 +3,7 @@
 
 
 {% block content %}
+<script src="test2.js"></script>
 <div class="container">
     
     <div class="shopping-cart mt-5">
@@ -22,16 +23,16 @@
     </div>
 
     
-    {% for item in items %}
    
-    {% if item.user_id == current_user.id %}
         
 
-    
-       
+    {% for result in results %}
+    {% for item in items %}
+
+       {% if item.id == result.id %}
         <div class="product">
             <div class="product-image">
-                <img src="../static/images/cq5dam.web.1280.1280.jpg">
+                <img src="{{ url_for('static',filename='images/' + item.img_file) }} " height="100" width="100">
             </div>
             <div class="product-details">
                 <div class="product-title">{{item.devicename}}</div>
@@ -39,7 +40,7 @@
             </div>
             <div class="product-price">{{item.price}}</div>
             <div class="product-quantity">
-                <input class="input" type="text" placeholder="{{item.qty}}">
+                <input class="input" type="text" placeholder="{{result.qty}}">
             </div>
             <div class="product-removal">
                 <button class="remove-product">
@@ -48,12 +49,11 @@
             <div class="product-line-price">{{item.t_price}}</div>
         </div>
 
-       
-    
-        
+       {% endif %}
+    {% endfor %}
+
    
     
-        {% endif %}
         
 
             
@@ -80,6 +80,6 @@
     
 
 </div>
-{{session["card"]}}
-<script src="test2.js"></script>
+
+
 {% endblock %}  

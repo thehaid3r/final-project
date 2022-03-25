@@ -1224,3 +1224,14 @@ input::-webkit-inner-spin-button {
     font-size: 13px;
     margin-bottom: 0;
 }
+.bg-blue{
+    background-color: #111A5B;
+    opacity: 1;
+    margin-bottom: 10%;
+}
+.login-btn{
+    color :rgba(255,255,255,.55);
+}
+.login-btn:hover {
+    color :rgba(255, 255, 255, 0.678);
+}

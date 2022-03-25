@@ -1,4 +1,4 @@
-from flask import Flask ,render_template, url_for,redirect,flash,session
+from flask import Flask ,render_template, url_for,redirect,flash,session,request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin ,LoginManager ,login_user,login_required,logout_user,current_user
 from flask_wtf import FlaskForm
@@ -201,9 +201,9 @@ def sale():
     
     
         
-        
+    results=session["card"]    
     items=sales.query.order_by(sales.id)
-    return render_template('sales.html',items=items)
+    return render_template('sales.html',items=items,results=results)
 
 
 @app.route('/payment',methods=(['GET','POST']))
@@ -290,6 +290,8 @@ def pro4():
 
 @app.route('/info/<int:id>')
 def info(id):
+    
+
     items = store.query.filter_by(id=id).first()
     return render_template('info.html',items=items)
 
@@ -493,7 +495,7 @@ def addtocard(id,qty):
     session["card"]=li
    
     print(session["card"])
-    return redirect(url_for('pro2'))
+    return redirect(url_for('proudcts'))
 
 
 if __name__=="__main__":
