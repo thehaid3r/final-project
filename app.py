@@ -1,4 +1,4 @@
-from flask import Flask ,render_template, url_for,redirect,flash,session
+from flask import Flask ,render_template, url_for,redirect,flash,session,request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin ,LoginManager ,login_user,login_required,logout_user,current_user
 from flask_wtf import FlaskForm
@@ -197,13 +197,15 @@ def register():
 @login_required
 
 def sale():
-   
-    
-    
-        
-        
-    items=sales.query.order_by(sales.id)
-    return render_template('sales.html',items=items)
+    results=session["card"]    
+    items=store.query.order_by(store.id)
+    sum=0
+    for result in results :
+        for item in items :
+            if result["id"] == item.id :
+                sum+=(result["qty"] * item.price)
+    print(sum)
+    return render_template('sales.html',items=items,results=results ,sum=sum)
 
 
 @app.route('/payment',methods=(['GET','POST']))
@@ -290,6 +292,8 @@ def pro4():
 
 @app.route('/info/<int:id>')
 def info(id):
+    
+
     items = store.query.filter_by(id=id).first()
     return render_template('info.html',items=items)
 
@@ -493,8 +497,38 @@ def addtocard(id,qty):
     session["card"]=li
    
     print(session["card"])
-    return redirect(url_for('pro2'))
+    return redirect(url_for('proudcts'))
 
+
+
+@app.route('/updatecard/<int:id>' , methods=["POST"] )
+def updatecard(id):
+    qty=int(request.form.get("quantity"))
+    print(qty)
+    items=session["card"]
+    li=[]
+    
+    for item in items:
+
+        if item.get("id",None)!=id :
+            li.append(item)
+            print(item)
+           
+        else :
+            item["qty"] =int(item.get("qty",0))+ qty
+            li.append(item) 
+    
+    if len(items)==0 :
+        li.append({"id":id ,"qty":qty})
+    elif id not in [obj['id'] for obj in li ] :
+        
+        li.append({"id":id ,"qty":qty})
+
+
+    session["card"]=li
+   
+    print(session["card"])
+    return redirect(url_for('proudcts'))
 
 if __name__=="__main__":
 
