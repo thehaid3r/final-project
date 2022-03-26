@@ -4,51 +4,51 @@
 
 {% block content %}
 {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-                 
-                
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+
+{% endfor %}
+{% endif %}
+{% endwith %}
 <title> login page</title>
 
 
 <div class="container">
-    <div class="d-lg-flex mt-5">
+  <div class="d-lg-flex mt-5">
 
-        <div class="login_form  ">
-            <h1> سجل دخولك الى <span>سايبورغ</span></h1>
-            <p class=""> بياناتك الشخصية سوف تستخدم لمساعدتك خلال هذا الموقع الالكتروني</p>
-            <form action="" method="post" class="mb-5">
+    <div class="login_form  ">
+      <h1> سجل دخولك الى <span>سايبورغ</span></h1>
+      <p class=""> بياناتك الشخصية سوف تستخدم لمساعدتك خلال هذا الموقع الالكتروني</p>
+      <form action="" method="post" class="mb-5">
 
-                {{form.hidden_tag()}}
-                <span class="form-label class=width "> الاسم</span>
-                <br>
-                {{form.username(class="width")}}
-                <br>
-                <br>
-                <span class="form-label class=width"> الرمز السري</span>
-                <br>
-                {{form.password(class="width")}}
-                <br>
-                <br>
-                {{form.submit(class="btn btn_color mb-3 ")}}
-                <br> <br>
-                <p> ليس لديك حساب؟ <a href="{{ url_for('register')}}" class="btn btn_color"> انشاء حساب</a></p>
-            </form>
-        </div>
-
-        <div class="login_form">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_nzp1m8kj.json" background="transparent"
-                speed="0.5" style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-        </div>
+        {{form.hidden_tag()}}
+        <span class="form-label class=width "> الاسم</span>
+        <br>
+        {{form.username(class="width")}}
+        <br>
+        <br>
+        <span class="form-label class=width"> الرمز السري</span>
+        <br>
+        {{form.password(class="width")}}
+        <br>
+        <br>
+        {{form.submit(class="btn btn_color mb-3 ")}}
+        <br> <br>
+        <p> ليس لديك حساب؟ <a href="{{ url_for('register')}}" class="btn btn_color"> انشاء حساب</a></p>
+      </form>
     </div>
+
+    <div class="login_form">
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_fuqaj5tg.json" background="transparent"
+        speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
+    </div>
+  </div>
 
 </div>
 {% endblock %}

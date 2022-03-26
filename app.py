@@ -199,7 +199,13 @@ def register():
 def sale():
     results=session["card"]    
     items=store.query.order_by(store.id)
-    return render_template('sales.html',items=items,results=results)
+    sum=0
+    for result in results :
+        for item in items :
+            if result["id"] == item.id :
+                sum+=(result["qty"] * item.price)
+    print(sum)
+    return render_template('sales.html',items=items,results=results ,sum=sum)
 
 
 @app.route('/payment',methods=(['GET','POST']))

@@ -1,121 +1,140 @@
 <!DOCTYPE html>
-<html lang="en"  dir="rtl">
+<html lang="en" dir="rtl">
+
 <head>
+
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=Tajawal:wght@400;800&display=swap"
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=Tajawal:wght@400;800&display=swap"
             rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-            <link rel="stylesheet" href="./css/bootstrap.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-            <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=Tajawal:wght@400;800&display=swap" rel="stylesheet">
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-                <link rel="stylesheet" href="../static/style.css">
-    
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=Tajawal:wght@400;800&display=swap"
+            rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="../static/style.css">
+
     </head>
-    
-    
+
+
 </head>
+
 <body>
+
+
+
+
+
+
+
+    <title>home </title>
     
+    <section class="background-main">
 
 
+        <!-- ======info main======= -->
 
+        <div class="container text-white ">
+            {% if current_user.is_authenticated %}
+            {% if current_user.rule == True %}
+            <nav class="navbar navbar-expand-lg navbar-dark bg-blue  fixed-top ">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><span>س</span>ايبورغ</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav me-auto ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="{{url_for('admin')}}">ادارة الموقع</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('maintenancefb') }}">قسم الصيانة </a>
+                            </li>
 
-<title>home </title>
-<section class="background-main">
-    {% if current_user.is_authenticated %}
-    {% if current_user.rule == True %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-blue  fixed-top ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><span>س</span>ايبورغ</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav me-auto ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="{{url_for('admin')}}">ادارة الموقع</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('maintenancefb') }}">قسم الصيانة </a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('storage')}}">المخزن</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('sale')}}"> عمليات المبيعات </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('userss')}}"> المستخدمين </a>
-                        </li>
-                    </ul>
-                    <a href="{{url_for('logout')}}" class="nav-link">
-                        <button class=" me-auto ms-auto btn login-btn">تسجيل الخروج</button>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('storage')}}">المخزن</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('sale')}}"> عمليات المبيعات </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('userss')}}"> المستخدمين </a>
+                            </li>
+                        </ul>
+                        <a href="{{url_for('logout')}}" class="nav-link">
+                            <button class=" me-auto ms-auto btn login-btn">تسجيل الخروج</button>
                         </a>
-                </div>
-               
-            </div>
-        </nav>
-    {% else %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-blue  fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><span>س</span>ايبورغ</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav me-auto ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="{{url_for('home')}}">الرئيسية</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('aboutus') }}">من نحن</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('proudcts')}}"> المتجر </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('maintenancee')}}">الصيانة</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('sale')}}">المبيعات</a>
-                        </li>
+                    </div>
 
-                    </ul>
-                    <a href="{{url_for('logout')}}" class="nav-link">
-                        <button class=" me-auto ms-auto btn login-btn">تسجيل الخروج</button>
-                        </a>
                 </div>
-                
-            </div>
-        </nav>
-        {% endif %}
-        {% else %}
-        
+            </nav>
+            {% else %}
+            <nav class="navbar navbar-expand-lg navbar-dark bg-blue  fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><span>س</span>ايبورغ</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav me-auto ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="{{url_for('home')}}">الرئيسية</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('aboutus') }}">من نحن</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('proudcts')}}"> المتجر </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('maintenancee')}}">الصيانة</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('sale')}}">المبيعات</a>
+                            </li>
+
+                        </ul>
+                        <a href="{{url_for('logout')}}" class="nav-link">
+                            <button class=" me-auto ms-auto btn login-btn">تسجيل الخروج</button>
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+            {% endif %}
+            {% else %}
+
             <nav class="navbar navbar-expand-lg navbar-dark bg-blue fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#"><span>س</span>ايبورغ</a>
@@ -146,450 +165,441 @@
                     </div>
                     <a href="{{url_for('login')}}" class="nav-link">
                         <button class=" me-auto ms-auto btn login-btn">تسجيل الدخول</button>
-                        <img src="../static/images/user.png" width="31" height="31" alt=""> </a>
+                        <img src="../static/images/uuuu.png" width="31" height="31" alt=""> </a>
                 </div>
             </nav>
 
             {% endif %}
-
- 
-    <!-- ======info main======= -->
-
-    <div class="container text-white ">
-        <div class="d-sm-flex align-items-center justify-content-between">
-            <div class="col-8">
-                <h1>مرحبا بكم في سايبورغ </h1>
-                <h2 class="mt-lg-1">هو مشروع من ضمن مشاريع المحطة<br>الذي يوفر لك منصة لكل ما يتعلق بالاجهزة الطبية<br>لتسهيل اختيار الشخص للأجهزة المناسبة</h2>
-                <button class="btn  btn-lg me-auto ms-auto btn-Contacts">تواصل معنا</button>
-            </div>
-            <div class="col-4">
-                <img src="../static/images/CT scan-amico.png" width="654" height="619" alt="" class="img-fluid mt-5 d-sm-block d-d0ne">
-            </div>
-        </div>
-
-        <div class="d-sm-flex align-items-center ">
-            <div class="Devices-Sold">
-                <h1>23K</h1>
-
-                <h4> Devices Sold</h4>
-
-                <div class="plus">
-                    <!-- <img src="../cyborg/pluus.png" alt=""> -->
-                    <script class="pluus" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_wkt6exed.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <div class="d-sm-flex align-items-center justify-content-between ">
+                <div class="col-8">
+                    <h1 class="fw-bolder">مرحبا بكم في سايبورغ </h1>
+                    <h2 class="mt-lg-1">هو مشروع من ضمن مشاريع المحطة<br>الذي يوفر لك منصة لكل ما يتعلق بالاجهزة
+                        الطبية<br>لتسهيل اختيار الشخص للأجهزة المناسبة</h2>
+                    <button class="btn  btn-lg me-auto ms-auto btn-Contacts">تواصل معنا</button>
+                </div>
+                <div class="col-4">
+                    <img class="mt-5" src="../static/images/CT scan-amico.png" width="554" height="519" alt=""
+                        class=" d-sm-block d-d0ne">
                 </div>
             </div>
-            <div class="Devices-Sold">
-                <h1>23K</h1>
-                <h4> Devices Sold</h4>
 
-                <div class="plus">
-                    <!-- <img src="../cyborg/pluus.png" alt=""> -->
+            <div class="d-sm-flex align-items-center ">
+                <div class="Devices-Sold">
+                    <h1>23K</h1>
 
-                    <script class="pluus" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_wkt6exed.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                    <h4> Devices Sold</h4>
+
+                    <div class="plus">
+                        <!-- <img src="../cyborg/pluus.png" alt=""> -->
+                        <script class="pluus"
+                            src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_wkt6exed.json"
+                            background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+                        </lottie-player>
+                    </div>
+                </div>
+                <div class="Devices-Sold">
+                    <h1>23K</h1>
+                    <h4> Devices Sold</h4>
+
+                    <div class="plus">
+                        <!-- <img src="../cyborg/pluus.png" alt=""> -->
+
+                        <script class="pluus"
+                            src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_wkt6exed.json"
+                            background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+                        </lottie-player>
+                    </div>
+                </div>
+                <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_E3llVz.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player> -->
+            </div>
+
+        </div>
+        <!-- <div>
+        <img src="./images/Vector 4.png" alt="" width="2693.5" height="208" class="">
+    </div> -->
+        <!-- =========news letter=========== -->
+
+    </section>
+    <section>
+        <div class="container ">
+            <div>
+                <div class="Text-1">
+                    <p class="span ">لماذا تعتبر الأجهزة الطبية مهمة في حياتنا؟</p>
+                    <h1 class="fw-bold">الطب دائما <br>في تطور </h1>
+                    <h4 class="fw-bold">يوفر مجموعة خدمات كاملة</h4>
+                    <h5 class="fw-bold">تفيد الأجهزة الطبية المرضى من خلال مساعدة مقدمي الرعاية الصحية <br>تشخيص وعلاج
+                        المرضى ومساعدة المرضى على التغلب على المرض أو<br>المرض وتحسين نوعية حياتهم.</h5>
+                </div>
+
+            </div>
+            <div>
+                <img src="../static/images/pic.png" alt="" width="553.32" height="585" class="pic-1">
+
+            </div>
+            <div class="lign-items-center justify-content-between box-dark d-flex texter   Rectangle">
+                <div>
+                    <h1>42%</h1>
+
+                    <h5>سنوات من الخبرة</h5>
+                </div>
+                <div>
+                    <h1>20+</h1>
+                    <h5>أعضاء الشركة</h5>
+                </div>
+                <div>
+                    <h1>1.000</h1>
+                    <h5>اجهزتنا</h5>
                 </div>
             </div>
-            <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_E3llVz.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player> -->
+            <img src="../static/images/bbbbbbbbb.png" alt="" width="1171" height="176" class="Rectangle-img">
         </div>
 
-    </div>
-    <!-- <div>
-    <img src="./images/Vector 4.png" alt="" width="2693.5" height="208" class="">
-</div> -->
-    <!-- =========news letter=========== -->
+    </section>
+    <section>
 
-</section>
-<section>
-    <div class="container ">
-        <div>
-            <div class="Text-1">
-                <p class="span">لماذا تعتبر الأجهزة الطبية مهمة في حياتنا؟</p>
-                <h1>الطب دائما <br>في تطور </h1>
-                <h5>يوفر مجموعة خدمات كاملة</h5>
-                <h6>تفيد الأجهزة الطبية المرضى من خلال مساعدة مقدمي الرعاية الصحية <br>تشخيص وعلاج المرضى ومساعدة المرضى على التغلب على المرض أو<br>المرض وتحسين نوعية حياتهم.</h6>
+        <div class="container d-sm-flex align-items-center justify-content-between">
+            <Div>
+                <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
+                <h1 class="fw-bolder">ستكون عظيمة<br>تجربتك معنا</h1>
+                <p>ضمان حقيقي للأجهزة الأكثر إثارة للإعجاب.<br>عمل حاضر وجاهز ودقيق</p>
+
+            </Div>
+            <div class="m-right">
+                <h1 class="fw-bolder">1-منتجاتنا حصرية </h1>
+                <h1 class="fw-bolder">2- تعمل بدقة غير متناهية</h1>
+                <h1 class="fw-bolder">3- اسعارنا تنافسية</h1>
+
             </div>
 
-        </div>
-        <div>
-            <img src="../static/images/pic.png" alt="" width="553.32" height="585" class="pic-1">
 
         </div>
-        <div class="lign-items-center justify-content-between box-dark d-flex texter   Rectangle">
+    </section>
+    <section class="mt-lg-5">
+        <div class="container d-sm-flex align-items-center justify-content-between">
+            <Div>
+                <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
+                <h1 class="fw-bolder">ستكون عظيمة<br>أطلق العنان لأكبر قيمة ممكنة</h1>
+                <p>نقدم الدعم والخدمة لأجهزة القياس الخاصة بك تركيب مرورًا بالصيانة الوقائية والمعايرة حتى إصلاح
+                    الأجهزة.<br>خدمات شاملة للميزان والمقياس وخدمات أجهزة القياس الأخرى
+                </p>
+
+            </Div>
             <div>
-                <h1>42%</h1>
+                <img src="../static/images/lab.png" alt="" width="659" height="641">
+            </div>
 
-                <h6>سنوات من الخبرة</h6>
-            </div>
-            <div>
-                <h1>20+</h1>
-                <p>اعضاء الشركة</p>
-            </div>
-            <div>
-                <h1>1.000</h1>
-                <p>اجهزتنا</p>
-            </div>
 
         </div>
-        <img src="../static/images/bbbbbbbbb.png" alt="" width="1171" height="176" class="Rectangle-img">
-    </div>
+    </section>
+    <section>
+        <div class="container d-sm-flex align-items-center justify-content-between">
+            <div>
+                <img src="../static/images/Laboratory-cuate.png" alt="" width="627" height="572">
+            </div>
+            <Div>
+                <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
+                <h1 class="fw-bolder">ستكون عظيمة<br>أطلق العنان لأكبر قيمة ممكنة</h1>
+                <p>نقدم الدعم والخدمة لأجهزة القياس الخاصة بك تركيب مرورًا بالصيانة الوقائية والمعايرة حتى إصلاح
+                    الأجهزة.<br>خدمات شاملة للميزان والمقياس وخدمات أجهزة القياس الأخرى
+                </p>
+                <div class="d-sm-flex align-items-center">
+                    <div class="image">
+                        <img src="../static/images/true.png">
+                    </div>
+                    <div class="text ">
+                        <h5>مجموعة بما في ذلك المهارات الفنية</h5>
+                    </div>
+                </div>
+                <div class="d-sm-flex align-items-center mt-lg-3">
+                    <div class="image">
+                        <img src="../static/images/true.png">
+                    </div>
+                    <div class="text ">
+                        <h5>مجموعة بما في ذلك المهارات الفنية</h5>
+                    </div>
+                </div>
+                <div class="d-sm-flex align-items-center mt-lg-3">
+                    <div class="image">
+                        <img src="../static/images/true.png">
+                    </div>
+                    <div class="text ">
+                        <h5>مجموعة بما في ذلك المهارات الفنية</h5>
+                    </div>
+                </div>
+            </div>
 
-</section>
-<section>
-
-    <div class="container d-sm-flex align-items-center justify-content-between">
-        <Div>
-            <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
-            <h1>ستكون عظيمة<br>تجربتك معنا</h1>
-            <p>ضمان حقيقي للأجهزة الأكثر إثارة للإعجاب.<br>عمل حاضر وجاهز ودقيق</p>
 
         </Div>
-        <div class="m-right">
-            <h1>1-منتجاتنا حصرية </h1>
-            <h1>2- تعمل بدقة غير متناهية</h1>
-            <h1>3- اسعارنا تنافسية</h1>
-
         </div>
+    </section>
+    <!-- =========news section=========== -->
+    <section class="container">
+        <h1 class="w3-center fw-bolder">الأخبار</h1>
+        <button class="w3-button w3-black rounded-circle" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black rounded-circle " onclick="plusDivs(1)">&#10095;</button>
 
+        <div class="w3-content w3-display-container">
 
-    </div>
-</section>
-<section class="mt-lg-5">
-    <div class="container d-sm-flex align-items-center justify-content-between">
-        <Div>
-            <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
-            <h1>ستكون عظيمة<br>أطلق العنان لأكبر قيمة ممكنة</h1>
-            <p>نقدم الدعم والخدمة لأجهزة القياس الخاصة بك تركيب مرورًا بالصيانة الوقائية والمعايرة حتى إصلاح الأجهزة.<br>خدمات شاملة للميزان والمقياس وخدمات أجهزة القياس الأخرى
-            </p>
+            <div class="Slides-news ">
 
-        </Div>
-        <div>
-            <img src="../static/images/lab.png" alt="" width="659" height="641">
-        </div>
+                <div class=" d-sm-flex  justify-content-between">
+                    <div class="card m-2" style="width: 18rem;">
+                        <img src="../static/images/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">FDA sets terms for MDUFA V agreement</h5>
+                            <p class="card-text">The agency reached a belated agreement with industry over how much it
+                                will get to review medical products. It will receive at least $1.78 billion over the
+                                next five years, but could get up to $1.9 billion if it meets certain performance
+                                goals.
+                            </p>
+                            <p class="fs-6">المزيد...</p>
 
-
-    </div>
-</section>
-<section>
-    <div class="container d-sm-flex align-items-center justify-content-between">
-        <div>
-            <img src="../static/images/Laboratory-cuate.png" alt="" width="627" height="572">
-        </div>
-        <Div>
-            <p class="span">ما هي الميزات التي جعلتك تقع في حب أجهزتنا</p>
-            <h1>ستكون عظيمة<br>أطلق العنان لأكبر قيمة ممكنة</h1>
-            <p>نقدم الدعم والخدمة لأجهزة القياس الخاصة بك تركيب مرورًا بالصيانة الوقائية والمعايرة حتى إصلاح الأجهزة.<br>خدمات شاملة للميزان والمقياس وخدمات أجهزة القياس الأخرى
-            </p>
-            <div class="d-sm-flex align-items-center">
-                <div class="image">
-                    <img src="../static/images/true.png">
-                </div>
-                <div class="text ">
-                    <h5>مجموعة بما في ذلك المهارات الفنية</h5>
-                </div>
-            </div>
-            <div class="d-sm-flex align-items-center mt-lg-3">
-                <div class="image">
-                    <img src="../static/images/true.png">
-                </div>
-                <div class="text ">
-                    <h5>مجموعة بما في ذلك المهارات الفنية</h5>
-                </div>
-            </div>
-            <div class="d-sm-flex align-items-center mt-lg-3">
-                <div class="image">
-                    <img src="../static/images/true.png">
-                </div>
-                <div class="text ">
-                    <h5>مجموعة بما في ذلك المهارات الفنية</h5>
-                </div>
-            </div>
-        </div>
-
-
-    </Div>
-    </div>
-</section>
-<!-- =========news section=========== -->
-<section class="container">
-    <h1 class="w3-center">الأخبار</h1>
-    <button class="w3-button w3-black rounded-circle" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-button w3-black rounded-circle " onclick="plusDivs(1)">&#10095;</button>
-
-    <div class="w3-content w3-display-container">
-
-        <div class="Slides-news ">
-
-            <div class=" d-sm-flex  justify-content-between">
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-
-                    </div>
-                </div>
-
-                <div class="card  m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="Slides-news ">
-
-            <div class=" d-sm-flex  justify-content-between">
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-
-                    </div>
-                </div>
-                <div class="card  m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="Slides-news">
-
-            <div class=" d-sm-flex  justify-content-between">
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-
-                    </div>
-                </div>
-                <div class="card  m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="../static/images/neeeews.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example tfffffffffffffffffffffffext to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="fs-6">.fs-6 text</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-    </div>
-
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("Slides-news ");
-            if (n > x.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = x.length
-            }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-        }
-    </script>
-</section>
-<!-- =========Most Popular=========== -->
-<section class="container">
-    <div class="slideshow-container">
-
-        <div class="mySlides">
-            <div class="section">
-
-                <div id="" class="Testimonial">
-                    <div class="container">
-                    </div>
-                    <div class="row d_flex">
-                        <div class="col-md-3">
-                            <div class="Testimonial_box">
-                                <i><img src="../static/images/CT scan-amico.png" width="44" height="44" alt="#"/></i>
-                            </div>
                         </div>
-                        <div class="col-md-9">
-                            <div class="Testimonial_box">
-                                <h4>will smithe</h4>
-                                <p>Tof Lorem Ipsum, you need to be There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
-                                    believable. If you are going to use a pass
-                                    <br> age of Lorem Ipsum, you need to be
-                                </p>
+                    </div>
+
+                    <div class="card  m-2" style="width: 18rem;">
+                        <img src="../static/images/2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">COVID-19 diagnostics surge as industry prepares for spike in at-home
+                                testing</h5>
+                            <p class="card-text">With strong demand once again for rapid at-home coronavirus tests,
+                                medtech companies are looking beyond COVID-19 to sell over-the-counter and
+                                direct-to-consumer diagnostics for </p>
+                            <p class="fs-6">المزيد...</p>
+                        </div>
+                    </div>
+                    <div class="card m-2" style="width: 18rem;">
+                        <img src="../static/images/3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Another Philips ventilator recall gets Class I label from the FDA
+                            </h5>
+                            <p class="card-text">The recall began when the company discovered that some ventilators were
+                                assembled using expired adhesive, the failure of which could lead to injuries to
+                                patients. The FDA is treating the problem as a </p>
+                            <p class="fs-6">المزيد...</p>
+                        </div>
+                    </div>
+                    <div class="card m-2" style="width: 18rem;">
+                        <img src="../static/images/4.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">FDA labels Philips 2018 field correction for ventilators a Class I
+                                recall</h5>
+                            <p class="card-text">The company issued a field correction in 2018 for certain devices due
+                                to sound abatement foam degrading, the same issue spurring its 2021 recall of millions
+                                of devices. However, the company </p>
+                            <p class="fs-6">المزيد...</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="Slides-news ">
+
+                <div class=" d-sm-flex  justify-content-between">
+                    <div class="card m-2" style="width: 18rem;">
+                        <img src="../static/images/5.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">On high alert': Hospitals wary of cyber threats from Russia-Ukraine
+                                war</h5>
+                            <p class="card-text">Cybersecurity has always been chronically underfunded in hospitals,
+                                even before COVID-19 swallowed up more resources. Now, this major international threat
+                                is creating a "perfect storm," one cybersecurity.</p>
+                            <p class="fs-6">المزيد...</p>
+                        </div>
+                    </div>
+                    <div class="card  m-2" style="width: 18rem;">
+                        <img src="../static/images/6.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">US appeals court rules in favor of Nevro in patent dispute with
+                                Boston Scientific</h5>
+                            <p class="card-text">The U.S. Court of Appeals for the Federal Circuit upheld that some of
+                                Boston Scientific's neuromodulation patent claims were not valid, notching another win
+                                for Nevro in the ongoing litigation between the</p>
+                            <p class="fs-6">المزيد...</p>
+                        </div>
+                    </div>
+                    <div class="card m-2" style="width: 18rem;">
+                        <img src="../static/images/7.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">French, German medtech groups call for at least 2-year extension of
+                                MDR's transition period</h5>
+                            <p class="card-text">We are running out of time. The situation worsens dramatically. A
+                                collapse in patient care must be prevented," France's Snitem and Germany's BVMed said in
+                                a </p>
+                            <p class="fs-6">المزيد...</p>
+                        </div>
+                    </div>
+                    <div class="card m-2" style="width: 18rem;">
+                        <img src="../static/images/8.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Not for the faint of heart': Insulet CEO talks Tandem and Medtronic
+                                competition, Omnipod 5 launch</h5>
+                            <p class="card-text">Shacey Petrovic spoke to MedTech Dive about the long-awaited launch of
+                                its insulin pump, competitors' developing patch pumps and how the </p>
+                            <p class="fs-6">المزيد...</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("Slides-news ");
+                if (n > x.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = x.length
+                }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex - 1].style.display = "block";
+            }
+        </script>
+    </section>
+    <!-- =========Most Popular=========== -->
+    <section class="container">
+        <h1 class="w3-center mt-4">اراءالزبائن</h1>
+        <div class="slideshow-container">
+
+            <div class="mySlides">
+                <div class="section">
+
+                    <div id="" class="Testimonial">
+                        <div class="container">
+                        </div>
+                        <div class="row d_flex">
+                            <div class="col-md-3">
+                                <div class="Testimonial_box">
+                                    <i><img src="../static/images/clayyyyyyyyyy.png" width="" height="" alt="#"/></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="Testimonial_box">
+                                    <h4>علي الشمري</h4>
+                                    <p>المنتجات جيدة جدا والموقع مرتب وسهل الاستخدام كلش حبيته خصوصا التصميم العصري
+                                        والاسعار حلوة هم عاشت ايدكم المنتجات جيدة جدا والموقع مرتب وسهل الاستخدام كلش
+                                        حبيته خصوصا التصميم العصري والاسعار حلوة هم عاشت ايدكم والتوصيل
+                                        سريع والتعامل كلش مرتب انصحكم بيهم اشتريت هاي اكثر من مرة وثقة فول
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mySlides">
-            <div class="section">
+            <div class="mySlides">
+                <div class="section">
 
-                <div id="" class="Testimonial">
-                    <div class="container">
-                    </div>
-                    <div class="row d_flex">
-                        <div class="col-md-3">
-                            <div class="Testimonial_box">
-                                <i><img src="../static/images/CT scan-amico.png" width="44" height="44" alt="#"/></i>
-                            </div>
+                    <div id="" class="Testimonial">
+                        <div class="container">
                         </div>
-                        <div class="col-md-9">
-                            <div class="Testimonial_box">
-                                <h4>will smithe</h4>
-                                <p>Tof Lorem Ipsum, you need to be There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
-                                    believable. If you are going to use a pass
-                                    <br> age of Lorem Ipsum, you need to be
-                                </p>
+                        <div class="row d_flex">
+                            <div class="col-md-3">
+                                <div class="Testimonial_box">
+                                    <i><img src="../static/images/clayyyyyyyyyy.png" width="" height="" alt="#"/></i>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mySlides">
-            <div class="section">
+                            <div class="col-md-8">
+                                <div class="Testimonial_box">
+                                    <h4>احمد داندي</h4>
+                                    <p>الموقع سهل و الوانه حلوة وكلش استفاد منه وسلس ومرتب وكلشي مخلين بيه والتعامل كلش
+                                        مرتب انصحكم بيهم اشتريت هاي اكثر من مرة وثقة فول سريع والتعامل كلش مرتب انصحكم
+                                        بيهم اشتريت هاي اكثر من مرة وثقة فول
 
-                <div id="" class="Testimonial">
-                    <div class="container">
-                    </div>
-                    <div class="row d_flex">
-                        <div class="col-md-3">
-                            <div class="Testimonial_box">
-                                <i><img src="../static/images/cq5dam.web.1280 ffffffffffffff.png" width="44" height="44" alt="#"/></i>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="Testimonial_box">
-                                <h4>will smithe</h4>
-                                <p>Tof Lorem Ipsum, you need to be There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
-                                    believable. If you are going to use a pass
-                                    <br> age of Lorem Ipsum, you need to be
-                                </p>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="mySlides">
+                <div class="section">
+
+                    <div id="" class="Testimonial">
+                        <div class="container">
+                        </div>
+                        <div class="row d_flex">
+                            <div class="col-md-3">
+                                <div class="Testimonial_box">
+                                    <i><img src="../static/images/clayyyyyyyyyy.png" width="" height="" alt="#" /></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="Testimonial_box">
+                                    <h4>ضي صالح</h4>
+                                    <p>الموقع سلس وحلو ما عانيت من مشاكل المنتجات مالتكم كلش حلوة ومابيها ولطيفة وكيوت
+                                        سريع والتعامل كلش مرتب انصحكم بيهم اشتريت هاي اكثر من مرة وثقة فول سريع والتعامل
+                                        كلش مرتب انصحكم بيهم اشتريت هاي اكثر من مرة وثقة فول سريع
+                                        والتعامل كلش مرتب انصحكم بيهم اشتريت هاي اكثر من مرة وثقة فول
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a> -->
+
         </div>
-        <!-- 
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a> -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
 
-    </div>
-    <div class="dot-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
 
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {
-                slideIndex = 1
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
             }
-            if (n < 1) {
-                slideIndex = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
 
-</section>
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
 
-</body>
-</html>
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = slides.length
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+
+    </section>

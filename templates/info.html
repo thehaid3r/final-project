@@ -11,14 +11,10 @@
                 <div class="right-image">
                     <div class="row">
                         <div class="col-md-6">
-                            <h2 class="hidden-sm hidden-xs">Donec pulvinar quis tortor <br>aliquam tincidunt</h2>
-                            <h2 class="hidden-lg hidden-md">Donec pulvinar quis tortor aliquam tincidunt</h2>
-                            <span>Suspendisse faucibus ornare purus</span>
-                            <p>Morbi quam dui, scelerisque cursus nisl et, placerat congue mi. Proin odio massa, tempor id odio eget, mollis molestie dui. Cras elementum mollis nisi, dapibus sagittis leo pretium nec.</p> <br />
-                            <p>Aenean lobortis magna purus, quis blandit eros dictum at. Fusce gravida ligula non neque tempor congue. Vivamus efficitur eget nulla vel lacinia.</p>
-                            <h2 class="hidden-sm hidden-xs">Donec pulvinar quis tortor <br>aliquam tincidunt</h2>
-                            <span>Suspendisse faucibus ornare purus</span>
-                            <p>Morbi quam dui, scelerisque cursus nisl et, placerat congue mi. Proin odio massa, tempor id odio eget, mollis molestie dui. Cras elementum mollis nisi, dapibus sagittis leo pretium nec.</p> <br />
+                            <h2 class="hidden-sm hidden-xs">{{items.shortdesc}}</h2>
+                            <h2 class="hidden-lg hidden-md"></h2>
+                            <span>{{items.kind}}</span>
+                           <p   >{{items.longdesc}} </p>
                             <form action="/updatecard/{{items.id}}" method="POST" class="d-sm-flex align-items-center  gg">
                                 <input type="submit"  value="ضافة الجهاز الى قائمة المتشري" class="btn btn-add" >
                                 <div>
@@ -45,7 +41,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="image">
-                                <img src="{{ url_for('static',filename='images/' + items.img_file) }}" alt="">
+                                <img src="{{ url_for('static',filename='images/' + items.img_file) }}" height="800" width="500" alt="">
                             </div>
                         </div>
                     </div>
